@@ -1,0 +1,30 @@
+.header {
+    background: url(../img/header-bg.jpg) no-repeat;
+    background-position: center;
+    background-size: auto;
+    width: 100%;
+    &-body {
+        width: 100%;
+    }
+    &-head {
+        width: 100%;
+        .header-contact {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .header-tel-block {
+                .header-tel-link {
+                    display: block;
+                    margin: 0 20px;
+                    border-right: 1px solid rgba($white, 0.8);
+                    color: $white;
+                    padding: 0 20px;
+                }
+                .header-mail-link {
+    
+                }
+            }
+        }
+    }
+}
