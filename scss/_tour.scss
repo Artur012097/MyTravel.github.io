@@ -3,7 +3,7 @@
     position: relative;
     top: -150px;
     .tour-search {
-        width: 90%;
+        width: 80%;
         margin: 0 auto;
         &-header {
             width: 100%;
@@ -28,8 +28,50 @@
             border-radius: 10px;
             box-shadow: 0px 14px 50px 0px rgba(32, 32, 32, 0.15);
             .tour-form-row {
+                width: 100%;
+                padding: 20px 0;
                 display: flex;
+                justify-content: space-around;
+                .tour-search-block {
+                    flex-basis: 29%;
+                    display: flex;
+                    flex-direction: column;
+                    .tour-search {
+                        display: none;  
+                    }
+                    .tour__search {
+                        color: rgba($black, 0.6);
+                    }
+                    .date__link {
+                        display: inline-block;
+                        margin-top: 20px;
+                        border-bottom: 2px solid rgba($black, 0.1);
+                        color: rgba($black, 0.9);
+                        font-weight: $medium;
+                        padding-bottom: 15px;
+                        transition: all 0.2s ease;
+                        i {
+                            color: $blue;
+                            margin-right: 10px;
+                        }
+                        &:hover {
+                            color: rgba($black, 0.6);
+                        }
+                    }
+                }
             }
         }
     }
+}
+.tour-date-block {
+    flex-basis: 29%;
+    display: flex;
+    flex-direction: column;
+    .tour-date {
+        margin-top: 20px;
+    }
+}
+
+.tour-type-block {
+    flex-basis: 29%;
 }
