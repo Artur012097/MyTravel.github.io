@@ -3,7 +3,97 @@ body {
     height: 100%;
     font-family: $rubik;
 }
+.wrap {
+    max-width: 1320px;
+    margin: 0 auto;
+}
+.title-block {
+    text-align: center;
+    padding: 30px 0;
+        .title {
+            font-weight: $medium;
+            font-size: 30px;
+            padding: 30px 0;
+            padding-top: 0;
+            position: relative;
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: calc(50% - 20px);
+                width: 40px;
+                height: 2px;
+                border-radius: 2px;
+                background-color: rgba($black, 0.4);
+            }
+        }
+}
+.item-block {
+    transition: 0.2s ease;
+    border-radius: 5px;
+    position: relative;
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, #1e2022 0%, transparent 50%);
+        border-radius: 5px;
+    }
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 1px 1px 20px -3px rgba($black, 0.8);
+        &:after {
+            background: linear-gradient(180deg, #1e2022 0%, transparent 75%);
+        }
+        .content-list {
+            display: block;
+        }
+    }
+}
+.content-block {
+    position: absolute;
+    z-index: 2;
+    left: 20px;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    .content-title {
+        color: $white;
+        padding-bottom: 20px;
+        font-weight: $normal;
+        letter-spacing: 1px;
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            border-radius: 2px;
+            background-color: $white;
+        }
+    }
+    .content-list {
+        padding-top: 20px;
+        display: none;
+        .content-link {
+            color: $white;
+            display: inline-block;
+            margin: 5px 0;
+            transition: 0.2s ease;
+            &:hover {
+                color: $blue;
+            }
+        }
+    }
+}
 * {
     text-decoration: none;
     list-style: none;
+    padding: 0;
+    margin: 0;
 }

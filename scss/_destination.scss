@@ -1,0 +1,50 @@
+.destination {
+    width: 100%;
+    &-block {
+        &-top {
+            
+        }
+    }
+}
+.destination-top-item {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    .destination-item_1, .destination-item_2 {
+        width: 49%;
+        height: 350px;
+        background: url(../img/destination/london.jpg);
+        position: relative;
+    }
+    .destination-item_2 {
+        background: url(../img/destination/spain.jpg);
+    }
+}
+.destination-bottom-item {
+    display: flex;
+    justify-content: space-between;
+    .destination-item_1, .destination-item_2, .destination-item_3, .destination-item_4 {
+        width: 24%;
+        height: 350px;
+    }
+    .destination-item_1 {
+        background: url(../img/destination/us.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+    .destination-item_2 {
+        background: url(../img/destination/ukraine.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+    .destination-item_3 {
+        background: url(../img/destination/france.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+    .destination-item_4 {
+        background: url(../img/destination/india.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+}

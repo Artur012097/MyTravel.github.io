@@ -33,7 +33,6 @@
                 display: flex;
                 justify-content: space-around;
                 .tour-search-block {
-                    flex-basis: 29%;
                     display: flex;
                     flex-direction: column;
                     .tour-search {
@@ -64,7 +63,6 @@
     }
 }
 .tour-date-block {
-    flex-basis: 29%;
     display: flex;
     flex-direction: column;
     .tour-date {
@@ -73,5 +71,18 @@
 }
 
 .tour-type-block {
-    flex-basis: 29%;
+
+}
+.tour-search__btn {
+    height: 60px;
+    color: $white;
+    background: $blue;
+    border: none;
+    border-radius: 5px;
+    padding: 0 40px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    &:hover {
+        transform: translateY(-4px);
+    }
 }

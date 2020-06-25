@@ -5,9 +5,125 @@ body {
   font-family: "Rubik", sans-serif;
 }
 
+.wrap {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.title-block {
+  text-align: center;
+  padding: 30px 0;
+}
+
+.title-block .title {
+  font-weight: 500;
+  font-size: 30px;
+  padding: 30px 0;
+  padding-top: 0;
+  position: relative;
+}
+
+.title-block .title:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 20px);
+  width: 40px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.item-block {
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  border-radius: 5px;
+  position: relative;
+}
+
+.item-block:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#1e2022), color-stop(50%, transparent));
+  background: linear-gradient(180deg, #1e2022 0%, transparent 50%);
+  border-radius: 5px;
+}
+
+.item-block:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-box-shadow: 1px 1px 20px -3px rgba(0, 0, 0, 0.8);
+          box-shadow: 1px 1px 20px -3px rgba(0, 0, 0, 0.8);
+}
+
+.item-block:hover:after {
+  background: -webkit-gradient(linear, left top, left bottom, from(#1e2022), color-stop(75%, transparent));
+  background: linear-gradient(180deg, #1e2022 0%, transparent 75%);
+}
+
+.item-block:hover .content-list {
+  display: block;
+}
+
+.content-block {
+  position: absolute;
+  z-index: 2;
+  left: 20px;
+  top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.content-block .content-title {
+  color: #fff;
+  padding-bottom: 20px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.content-block .content-title:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: #fff;
+}
+
+.content-block .content-list {
+  padding-top: 20px;
+  display: none;
+}
+
+.content-block .content-list .content-link {
+  color: #fff;
+  display: inline-block;
+  margin: 5px 0;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.content-block .content-list .content-link:hover {
+  color: #297cbb;
+}
+
 * {
   text-decoration: none;
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .header {
@@ -367,8 +483,6 @@ body {
 }
 
 .tour .tour-search-content .tour-form-row .tour-search-block {
-  -ms-flex-preferred-size: 29%;
-      flex-basis: 29%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -407,8 +521,6 @@ body {
 }
 
 .tour-date-block {
-  -ms-flex-preferred-size: 29%;
-      flex-basis: 29%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -422,8 +534,83 @@ body {
   margin-top: 20px;
 }
 
-.tour-type-block {
-  -ms-flex-preferred-size: 29%;
-      flex-basis: 29%;
+.tour-search__btn {
+  height: 60px;
+  color: #fff;
+  background: #297cbb;
+  border: none;
+  border-radius: 5px;
+  padding: 0 40px;
+  cursor: pointer;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.tour-search__btn:hover {
+  -webkit-transform: translateY(-4px);
+          transform: translateY(-4px);
+}
+
+.destination {
+  width: 100%;
+}
+
+.destination-top-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 20px;
+}
+
+.destination-top-item .destination-item_1, .destination-top-item .destination-item_2 {
+  width: 49%;
+  height: 350px;
+  background: url(../img/destination/london.jpg);
+  position: relative;
+}
+
+.destination-top-item .destination-item_2 {
+  background: url(../img/destination/spain.jpg);
+}
+
+.destination-bottom-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.destination-bottom-item .destination-item_1, .destination-bottom-item .destination-item_2, .destination-bottom-item .destination-item_3, .destination-bottom-item .destination-item_4 {
+  width: 24%;
+  height: 350px;
+}
+
+.destination-bottom-item .destination-item_1 {
+  background: url(../img/destination/us.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.destination-bottom-item .destination-item_2 {
+  background: url(../img/destination/ukraine.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.destination-bottom-item .destination-item_3 {
+  background: url(../img/destination/france.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.destination-bottom-item .destination-item_4 {
+  background: url(../img/destination/india.jpg);
+  background-size: cover;
+  background-position: center;
 }
 /*# sourceMappingURL=style.css.map */
