@@ -1,10 +1,7 @@
 .destination {
     width: 100%;
-    &-block {
-        &-top {
-            
-        }
-    }
+    border-bottom: 1px solid rgba($gray-lighten, 0.1);
+    padding-bottom: 50px;
 }
 .destination-top-item {
     display: flex;
