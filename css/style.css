@@ -53,13 +53,6 @@ body {
   border-radius: 5px;
 }
 
-.item-block:hover {
-  -webkit-transform: translateY(-5px);
-          transform: translateY(-5px);
-  -webkit-box-shadow: 1px 1px 20px -3px rgba(0, 0, 0, 0.8);
-          box-shadow: 1px 1px 20px -3px rgba(0, 0, 0, 0.8);
-}
-
 .item-block:hover:after {
   background: -webkit-gradient(linear, left top, left bottom, from(#1e2022), color-stop(75%, transparent));
   background: linear-gradient(180deg, #1e2022 0%, transparent 75%);
@@ -117,6 +110,18 @@ body {
 
 .content-block .content-list .content-link:hover {
   color: #297cbb;
+}
+
+.hover-translate:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.hover-shadow:hover {
+  -webkit-box-shadow: 1px 1px 20px -3px rgba(0, 0, 0, 0.8);
+          box-shadow: 1px 1px 20px -3px rgba(0, 0, 0, 0.8);
 }
 
 * {
@@ -612,5 +617,33 @@ body {
   background: url(../img/destination/india.jpg);
   background-size: cover;
   background-position: center;
+}
+
+.trending {
+  width: 100%;
+}
+
+.trending .trending-navbar {
+  width: 100%;
+}
+
+.trending .trending-navbar .trending-list-block {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.trending .trending-navbar .trending-list-block .trending-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.trending .trending-navbar .trending-list-block .trending-list-link {
+  color: #3b444f;
+  font-weight: 600;
 }
 /*# sourceMappingURL=style.css.map */

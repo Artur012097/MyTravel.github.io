@@ -43,8 +43,6 @@ body {
         border-radius: 5px;
     }
     &:hover {
-        transform: translateY(-5px);
-        box-shadow: 1px 1px 20px -3px rgba($black, 0.8);
         &:after {
             background: linear-gradient(180deg, #1e2022 0%, transparent 75%);
         }
@@ -89,6 +87,17 @@ body {
                 color: $blue;
             }
         }
+    }
+}
+.hover-translate {
+    &:hover {
+        transform: translateY(-5px);
+        transition: 0.2s ease;
+    }
+}
+.hover-shadow {
+    &:hover {
+        box-shadow: 1px 1px 20px -3px rgba($black, 0.8);
     }
 }
 * {

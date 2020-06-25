@@ -1,0 +1,19 @@
+.trending {
+    width: 100%;
+    .trending-navbar {
+        width: 100%; 
+        .trending-list-block {
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 20px 0;
+            .trending-list {
+                display: flex;
+                justify-content: space-between;
+                &-link {
+                    color: $gray-dark;
+                    font-weight: $bold;
+                }
+            }
+        }
+    }
+}
