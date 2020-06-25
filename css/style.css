@@ -646,4 +646,46 @@ body {
   color: #3b444f;
   font-weight: 600;
 }
+
+.trending-item-content .trending-content-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.trending-item-content .trending-content-row .trending-content-block {
+  width: 300px;
+}
+
+.trending-content-block-top {
+  height: 220px;
+  background: url(../img/trending/stonehenge.jpg);
+  background-size: cover;
+  position: relative;
+}
+
+.trending-content-block-top .trending-content-top-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.trending-content-block-top .trending-content-top-offer {
+  position: absolute;
+  top: 0;
+}
+
+.trending-content-block-top .trending-content-top-like {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.trending-content-block-top .trending-content-top-price {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
 /*# sourceMappingURL=style.css.map */
