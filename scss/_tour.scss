@@ -1,7 +1,7 @@
 .tour {
     width: 100%;
-    position: relative;
-    top: -150px;
+    position: absolute;
+    transform: translateY(-120px);
     .tour-search {
         width: 80%;
         margin: 0 auto;
