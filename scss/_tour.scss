@@ -8,6 +8,7 @@
         &-header {
             width: 100%;
             padding-bottom: 40px;
+            padding-left: 20px;
         }
         &-navbar {
             width: 100%;
@@ -24,62 +25,69 @@
             }
         }
         &-content {
+            height: 130px;
             background-color: $white;
-            border-radius: 10px;
+            border-radius: 5px;
             box-shadow: 0px 14px 50px 0px rgba(32, 32, 32, 0.15);
             .tour-form-row {
                 width: 100%;
-                padding: 20px 0;
+                height: inherit;
                 display: flex;
                 justify-content: space-around;
-                .tour-search-block {
-                    display: flex;
-                    flex-direction: column;
-                    .tour-search {
-                        display: none;  
-                    }
-                    .tour__search {
-                        color: rgba($black, 0.6);
-                    }
-                    .date__link {
-                        display: inline-block;
-                        margin-top: 20px;
-                        border-bottom: 2px solid rgba($black, 0.1);
-                        color: rgba($black, 0.9);
-                        font-weight: $medium;
-                        padding-bottom: 15px;
-                        transition: all 0.2s ease;
-                        i {
-                            color: $blue;
-                            margin-right: 10px;
-                        }
-                        &:hover {
-                            color: rgba($black, 0.6);
-                        }
-                    }
+                align-items: center;
+            }
+        }
+    }
+}
+
+.search-link, .date-link, .type-link {
+    display: block;
+    margin-top: 20px;
+    color: rgba($black, 0.9);
+    font-weight: $medium;
+    padding-bottom: 15px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    &__icon {
+        color: $blue;
+        margin-right: 10px;
+    }
+}
+
+.search-link {
+    &:hover {
+        .search-link__text {
+            opacity: 0.6;
+        }
+    }
+}
+
+.tour {
+    &-block {
+        &-search, &-date, &-type {
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            border-bottom: 2px solid rgba($black, 0.1);
+            .search-title, .date-title, .type-title {
+                display: block;
+                color: rgba($black, 0.6);
+                font-weight: $normal;
+                &:hover {
+                    color: rgba($black, 0.6);
                 }
             }
         }
     }
 }
-.tour-date-block {
-    display: flex;
-    flex-direction: column;
-    .tour-date {
-        margin-top: 20px;
-    }
-}
 
-.tour-type-block {
-
-}
 .tour-search__btn {
     height: 60px;
     color: $white;
     background: $blue;
     border: none;
-    border-radius: 5px;
-    padding: 0 40px;
+    border-radius: 3px;
+    padding: 0 60px;
     cursor: pointer;
     transition: 0.2s ease;
     &:hover {

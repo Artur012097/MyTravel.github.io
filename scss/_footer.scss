@@ -1,0 +1,38 @@
+footer {
+    width: 100%;
+    padding: 20px 0;
+    .footer-block {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.footer-menu {
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+    .footer-navbar {
+        width: 70%;
+        display: flex;
+        justify-content: space-around;
+        &__link {
+            display: inline-block;
+            font-weight: $normal;
+            transition: all 0.05s ease;
+            &:hover {
+                color: $blue;
+                text-decoration: underline;
+                padding-bottom: 5px;
+            }
+        }
+        &__icon {
+            display: inline-block;
+            color: $white;
+            font-weight: $normal;
+            transition: all 0.2s ease;
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+}
