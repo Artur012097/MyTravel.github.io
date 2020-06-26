@@ -1,0 +1,73 @@
+.top-deals {
+    border-bottom: 1px solid rgba($gray-lighten, 0.1);
+    padding-bottom: 50px;
+}
+
+.top-deals-slider-block {
+    width: 100%;
+    .slider-wrap {
+        position: relative;
+        height: 400px;
+        .slider_prev, .slider_next {
+            height: inherit;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 40px;
+            height: 40px;
+            left: -60px;
+            top: calc(50% - 35px);
+            color: $blue;
+            background-color: $blue-lighten;
+            border-radius: 50%;
+            transition: 0.4s ease;
+            &:hover {
+                color: $white;
+                background-color: $blue;
+            }
+            
+        }
+        .slider_next {
+            left: calc(100% + 20px);
+        }
+        .slider {
+            width: 100%;
+            height: inherit;
+            display: flex;
+            .slider-dial-block {
+                width: 400px;
+                height: inherit;
+                margin: 40px 20px 0 20px;
+                .deal-img-block {
+                    height: 270px;
+                    border-radius: 3px;
+                    .deal-image {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 3px;
+                    }
+                }
+            }
+            .deal-info-block {
+                .deal-info__link_1 {
+                    display: block;
+                    margin-top: 30px;
+                    margin-bottom: 15px;
+                    font-size: 17px;
+                    color: $gray-dark;
+                    font-weight: $medium;
+                    transform: 0.5s ease;
+                    &:hover {
+                        color: $blue;
+                    }
+                }
+                .deal-info__link_2 {
+                    display: block;
+                    color: $gray-light;
+                }
+            }
+        }
+    }
+}

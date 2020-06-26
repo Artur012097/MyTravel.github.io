@@ -124,6 +124,28 @@ body {
           box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.8);
 }
 
+.gray-light {
+  color: #67747c;
+}
+
+.contact-blocks-title {
+  display: block;
+  margin-bottom: 24px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #3b444f;
+}
+
+.contact-blocks-link {
+  display: block;
+  padding: 7px 0;
+}
+
+.contact-blocks-link:hover {
+  color: #297cbb;
+  text-decoration: underline;
+}
+
 * {
   text-decoration: none;
   list-style: none;
@@ -930,5 +952,251 @@ body {
 .choose-item-row .choose-item-block__text {
   color: #67747c;
   line-height: 1.7;
+}
+
+.top-deals {
+  border-bottom: 1px solid rgba(119, 131, 143, 0.1);
+  padding-bottom: 50px;
+}
+
+.top-deals-slider-block {
+  width: 100%;
+}
+
+.top-deals-slider-block .slider-wrap {
+  position: relative;
+  height: 400px;
+}
+
+.top-deals-slider-block .slider-wrap .slider_prev, .top-deals-slider-block .slider-wrap .slider_next {
+  height: inherit;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  left: -60px;
+  top: calc(50% - 35px);
+  color: #297cbb;
+  background-color: #ebf0f7;
+  border-radius: 50%;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+
+.top-deals-slider-block .slider-wrap .slider_prev:hover, .top-deals-slider-block .slider-wrap .slider_next:hover {
+  color: #fff;
+  background-color: #297cbb;
+}
+
+.top-deals-slider-block .slider-wrap .slider_next {
+  left: calc(100% + 20px);
+}
+
+.top-deals-slider-block .slider-wrap .slider {
+  width: 100%;
+  height: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.top-deals-slider-block .slider-wrap .slider .slider-dial-block {
+  width: 400px;
+  height: inherit;
+  margin: 40px 20px 0 20px;
+}
+
+.top-deals-slider-block .slider-wrap .slider .slider-dial-block .deal-img-block {
+  height: 270px;
+  border-radius: 3px;
+}
+
+.top-deals-slider-block .slider-wrap .slider .slider-dial-block .deal-img-block .deal-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+}
+
+.top-deals-slider-block .slider-wrap .slider .deal-info-block .deal-info__link_1 {
+  display: block;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 17px;
+  color: #3b444f;
+  font-weight: 500;
+  -webkit-transform: 0.5s ease;
+          transform: 0.5s ease;
+}
+
+.top-deals-slider-block .slider-wrap .slider .deal-info-block .deal-info__link_1:hover {
+  color: #297cbb;
+}
+
+.top-deals-slider-block .slider-wrap .slider .deal-info-block .deal-info__link_2 {
+  display: block;
+  color: #67747c;
+}
+
+.contact {
+  width: 100%;
+  padding: 50px 0;
+  border-bottom: 1px solid rgba(119, 131, 143, 0.1);
+}
+
+.contact .contact-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.contact .contact-block .contact-help {
+  width: 23%;
+}
+
+.contact .contact-block .contact-help .help-phone .help-link-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.contact .contact-block .contact-help .help-phone .help-link-block i {
+  display: inline-block;
+  font-size: 40px;
+  color: #297cbb;
+}
+
+.contact .contact-block .contact-help .help-phone .help-link-block .help-link__number {
+  margin-left: 20px;
+  font-size: 18px;
+}
+
+.contact .contact-block .contact-help .help-phone .help-link-block .help-link__number span {
+  display: block;
+  padding-top: 10px;
+  color: #297cbb;
+}
+
+.contact .contact-block .contact-help .help-phone .help-link-block .help-link__number span b {
+  font-weight: 500;
+}
+
+.contact .contact-block .contact-help .contact-info {
+  display: block;
+  margin: 20px 0;
+}
+
+.contact .contact-block .contact-help .contact-info .info-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.contact .contact-block .contact-help .contact-soc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.contact .contact-block .contact-help .contact-soc__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  color: #67747c;
+  border: 2px solid rgba(103, 116, 124, 0.2);
+  border-radius: 50%;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.contact .contact-block .contact-help .contact-soc__link:hover {
+  background-color: #297cbb;
+  border-color: #297cbb;
+  color: #fff;
+}
+
+.contact .contact-block .contact-mailing {
+  width: 25%;
+}
+
+.contact .contact-block .contact-mailing .mailing-text {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.contact .contact-block .contact-mailing .mailing-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 15px;
+}
+
+.contact .contact-block .contact-mailing .mailing-form__mail {
+  border: none;
+  border: 2px solid rgba(103, 116, 124, 0.2);
+  border-radius: 3px;
+  padding: 20px 0 20px 20px;
+}
+
+.contact .contact-block .contact-mailing .mailing-form__mail::-webkit-input-placeholder {
+  color: rgba(103, 116, 124, 0.9);
+  font-size: 14px;
+}
+
+.contact .contact-block .contact-mailing .mailing-form__mail:-ms-input-placeholder {
+  color: rgba(103, 116, 124, 0.9);
+  font-size: 14px;
+}
+
+.contact .contact-block .contact-mailing .mailing-form__mail::-ms-input-placeholder {
+  color: rgba(103, 116, 124, 0.9);
+  font-size: 14px;
+}
+
+.contact .contact-block .contact-mailing .mailing-form__mail::placeholder {
+  color: rgba(103, 116, 124, 0.9);
+  font-size: 14px;
+}
+
+.contact .contact-block .contact-mailing .mailing-form__btn {
+  background-color: #1d508d;
+  color: #fff;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 15px;
+  padding: 0 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.contact .contact-block .contact-mailing .mailing-form__btn:hover {
+  -webkit-box-shadow: 0 4px 11px rgba(29, 80, 141, 0.35);
+          box-shadow: 0 4px 11px rgba(29, 80, 141, 0.35);
 }
 /*# sourceMappingURL=style.css.map */
