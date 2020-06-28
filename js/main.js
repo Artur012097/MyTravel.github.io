@@ -66,4 +66,37 @@ for(let i = 0; i < tBlocks.length; i++) {
     //    }
     
 
+    // Эффект наведения на ссылок меню шапки
+
+    let headerLinks = document.querySelectorAll('.header-navbar__link');
+    let headerLinkIcon = document.querySelector('.header-navbar__icon');
+    let headerHiddenBlocks = document.querySelectorAll('.hidden');
+
+    let headerHiddenBlocks_show = 'showed';
+    
+    
+        for(let i = 0; i < headerLinks.length; i++) {
+
+            headerLinks[i].onmouseover = function() {
+                headerHiddenBlocks[i].classList.add(headerHiddenBlocks_show)
+                
+            }
+            headerLinks[i].onmouseout = function() {
+                if (headerHiddenBlocks[i].classList.contains(headerHiddenBlocks_show)) {
+                    headerHiddenBlocks[i].classList.remove(headerHiddenBlocks_show)
+                }
+            }
+
+            headerLinkIcon.onmouseover = function() {
+                headerHiddenBlocks[headerLinks.length - 1].classList.add(headerHiddenBlocks_show)
+            }
+
+            headerLinkIcon.onmouseout = function() {
+            if (headerHiddenBlocks[headerLinks.length - 1].classList.contains(headerHiddenBlocks_show)) {
+                headerHiddenBlocks[headerLinks.length - 1].classList.remove(headerHiddenBlocks_show)
+            }
+        }
+
+            // headerHiddenBlocks[i].
+    };
     
