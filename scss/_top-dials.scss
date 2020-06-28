@@ -20,7 +20,10 @@
             top: calc(50% - 35px);
             color: $blue;
             background-color: $blue-lighten;
+            border: none;
             border-radius: 50%;
+            outline: none;
+            cursor: pointer;
             transition: 0.4s ease;
             &:hover {
                 color: $white;
