@@ -32,3 +32,18 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .choose {
+        
+        &-item {
+            &-row {
+                flex-wrap: wrap;
+                .choose-item-block {
+                    width: 80%;
+                    margin: 20px 0;
+                }
+            }
+        }
+    }
+}

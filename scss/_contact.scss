@@ -2,104 +2,152 @@
     width: 100%;
     padding: 50px 0;
     border-bottom: 1px solid rgba($gray-lighten, 0.1);
-    .contact-block {
+    &-block {
         display: flex;
         justify-content: space-between;
-        .contact {
-            &-help {
-                width: 23%;
-                .help-phone {
-                    .help-link-block {
-                        display: flex;
-                        i {
-                            display: inline-block;
-                            font-size: 40px;
-                            color: $blue;
-                        }
-                        .help-link__number {
-                            margin-left: 20px;
-                            font-size: 18px;
-                            span {
-                                display: block;
-                                padding-top: 10px;
-                                color: $blue;
-                                b {
-                                    font-weight: $medium;
-                                }
-                            }
-                        }
-                    }
-                    
-                }
+        flex-wrap: wrap;
+    }
+}
 
-                .contact-info {
-                    display: block;
-                    margin: 20px 0;
-                    .info-text {
-                        font-size: 16px;
-                        font-weight: $normal;
-                        line-height: 1.5;
+.contact {
+    &-help {
+        width: 23%;
+        .help-phone {
+            .help-link-block {
+                display: flex;
+                i {
+                    display: inline-block;
+                    font-size: 40px;
+                    color: $blue;
+                }
+                .help-link__number {
+                    margin-left: 20px;
+                    font-size: 18px;
+                    span {
+                        display: block;
+                        padding-top: 10px;
+                        color: $blue;
+                        b {
+                            font-weight: $medium;
+                        }
                     }
                 }
+            } 
+        }
+    }
+}
 
-                .contact-soc {
-                    display: flex;
-                    &__link {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        width: 40px;
-                        height: 40px;
-                        margin-right: 10px;
-                        color: $gray-light;
-                        border: 2px solid rgba($gray-light, 0.2);
-                        border-radius: 50%;
-                        transition: 0.3s ease;
-                        &:hover {
-                            background-color: $blue;
-                            border-color: $blue;
-                            color: $white;
-                        }
-                    }
-                }
+.contact-mailing {
+    width: 25%;
+    .mailing-text {
+        font-size: 16px;
+        line-height: 1.7;  
+    }
+    .mailing-form {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+        &__mail {
+            border: none;
+            border: 2px solid rgba($gray-light, 0.2);
+            border-radius: 3px;
+            padding: 20px 0 20px 20px;
+            &::placeholder {
+                color: rgba($gray-light, 0.9);
+                font-size: 14px;
             }
-            &-mailing {
-                width: 25%;
-                .mailing-text {
-                    font-size: 16px;
-                    line-height: 1.7;  
-                }
-                .mailing-form {
-                    display: flex;
-                    justify-content: space-between;
-                    margin-top: 15px;
-                    &__mail {
-                        border: none;
-                        border: 2px solid rgba($gray-light, 0.2);
-                        border-radius: 3px;
-                        padding: 20px 0 20px 20px;
-                        &::placeholder {
-                            color: rgba($gray-light, 0.9);
-                            font-size: 14px;
-                        }
-                    }
-                    &__btn {
-                        background-color: $blue-dark;
-                        color: $white;
-                        border: none;
-                        font-size: 14px;
-                        font-weight: $medium;
-                        margin-left: 15px;
-                        padding: 0 15px;
-                        border-radius: 3px;
-                        cursor: pointer;
-                        transition: all 0.2s ease-in-out;
-                        &:hover {
-                            box-shadow: 0 4px 11px rgba($blue-dark, 0.35);
-                        }
-                    }
-                }
+        }
+        &__btn {
+            background-color: $blue-dark;
+            color: $white;
+            border: none;
+            font-size: 14px;
+            font-weight: $medium;
+            margin-left: 15px;
+            padding: 0 15px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            &:hover {
+                box-shadow: 0 4px 11px rgba($blue-dark, 0.35);
             }
+        }
+    }
+}
+
+.contact-soc {
+    display: flex;
+    &__link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        color: $gray-light;
+        border: 2px solid rgba($gray-light, 0.2);
+        border-radius: 50%;
+        transition: 0.3s ease;
+        &:hover {
+            background-color: $blue;
+            border-color: $blue;
+            color: $white;
+        }
+    }
+}
+
+.contact-info {
+    display: block;
+    margin: 20px 0;
+    .info-text {
+        font-size: 16px;
+        font-weight: $normal;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 1370px) {
+    .contact-mailing {
+        .mailing-form {
+            flex-direction: column;
+            &__mail, &__btn {
+                margin: 10px 0;
+            }
+            &__btn {
+                height: 60px;
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .contact {
+        &-help {
+            width: 90%;
+            margin: 0 auto;
+            margin-bottom: 40px;
+            .help-phone {
+                margin: 20px 0;
+            }
+        }
+
+        .contact-mailing {
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 40px;
+        }
+
+    }
+}
+
+@media (max-width: 550px) {
+    .contact {
+    &-block {
+        .contact-company, .contact-service, .contact-support {
+            width: 70%;
+            margin: 20px 0;
+        }
         }
     }
 }

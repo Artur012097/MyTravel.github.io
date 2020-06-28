@@ -183,22 +183,198 @@
     }
 }
 
+.burer-menu {
+    display: none;
+}
+
 .header-content {
     width: 100%;
-    height: 700px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center; 
+    &__title-block {
+        padding: 150px 0;
+        padding-bottom: 250px;
+    }
     .header-title {
         font-size: 60px;
         font-weight: $thin;
         color: $white;
     }
+
     .header-text {
         font-size: 20px;
         color: $white;
         font-weight: $thin;
+    }
+}
+
+@media (max-width: 1270px) {
+    .header-menu {
+        .header-navbar {
+            width: 100%;
+            padding: 20px 0;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .header {
+        &-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba($white, 0.2);
+
+            .header-menu {
+                position: absolute;
+                width: 100%;
+                height: 0;
+                opacity: 0;
+                visibility: hidden;
+                top: 80px;
+                background-color: $white;
+                transition: all 0.3s ease;
+                z-index: 5;
+
+                .header-navbar {
+                    width: 100%;
+                    flex-direction: column;
+                    justify-content: space-around;
+
+                    &__link {
+                        display: block;
+                        color: $gray-light;
+                        margin: 5px 0;
+                        margin-left: 20px;
+
+                        &:hover {
+                            color: $blue;
+                        }
+                        
+                        &:after {
+                            right: 20px;
+                        }
+                    }
+
+                    &__icon {
+                        display: none;
+                    }
+                }
+
+                &_open {
+                    height: 100vh;
+                    opacity: 1;
+                    visibility: visible;
+                }
+
+            }
+
+            // Menu Burger
+
+            .burger-menu {
+                display: block;    
+                width: 25px;
+                height: 14px;
+                margin-right: 20px;
+                position: relative; 
+                z-index: 99;
+                cursor: pointer;
+                transition: all 0.3s ease;
+
+                .burger-line {
+                    position: absolute;
+                    top: calc(50% - 1px);
+                    width: 100%;
+                    height: 2px;
+                    background-color: $white; 
+                    transform: translateX(0) scale(1);
+                    transition: all 0.3s ease;
+                }
+
+                &:before, &:after {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    background-color: $white;
+                    transition: all 0.3s ease;
+                }
+
+                &:before {
+                    top: 0;
+                }
+
+                &:after {
+                    bottom: 0;
+                }
+                &_open {
+                    transition: all 0.3s ease;
+                    &:before {
+                        transform: rotate(45deg);
+                        top: 6px;
+                        transition: all 0.3s ease;
+                    }
+
+                    .burger-line {
+                        transform: translateX(-30px) scale(0);
+                        transition: all 0.3s ease;
+                    }
+
+                    &:after {
+                        bottom: 6px;
+                        transform: rotate(-45deg);
+                        transition: all 0.3s ease;
+                    }
+                }
+            }
+            
+            .header-contact {
+                width: 5%;
+                border: none;
+                .header-tel-block {
+                    display: none;
+                }
+                .header-sing-block {
+                    .header-soc {
+                        display: none;
+                    }
+                    .header-sing {
+                        border-right: none;
+                        padding: 0;
+                        margin: 0 20px;
+                        span {
+                            display: none;
+                        }
+                    }
+                    .header-currency {
+                        display: none;
+                    }
+                }
+            }
+
+            .header-top {
+                padding-left: 0;
+                .header-logo {
+                    &__link {
+                        font-size: 35px;
+                    }
+                }
+                .header-search {
+                    display: none;
+                }
+            }
+            
+        }
+
+        &-content {
+            
+            &__title-block {
+                padding: 20px 0;
+                padding-bottom: 400px;
+            }
+        }
     }
 }

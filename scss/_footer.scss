@@ -36,3 +36,34 @@ footer {
         }
     }
 }
+
+@media (max-width: 992px) {
+    footer {
+        
+        .footer-block {
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+
+            .footer-reserve {
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .footer-menu {
+                width: 100%;
+                padding: 20px 0;
+                justify-content: space-between;
+                
+                .footer-navbar {
+                    width: 90%;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                }
+            }
+            
+        }
+    }
+}

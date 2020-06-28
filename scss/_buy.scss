@@ -138,3 +138,36 @@
         }
     }
 }
+
+@media (max-width: 992px) {
+    .buy {
+        padding-top: 0;
+        &-block {
+            flex-direction: column;
+
+            .buy-logo {
+                margin: 50px 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .payment {
+        flex-direction: column;
+        align-items: center;
+
+        .payment-type, .buy-language-block, .buy-currency-block {
+            width: 70%;
+            margin: 15px 0;
+            .buy-language-btn, .buy-currency-btn {
+                width: 100%;
+            }
+            img {
+                width: 70%;
+                margin: 0 auto;
+            }
+        }
+
+    }
+}

@@ -2,7 +2,7 @@
     width: 100%;
     border-bottom: 1px solid rgba($gray-lighten, 0.1);
     padding-bottom: 50px;
-    padding-top: 150px;
+    margin-top: -90px;
 }
 .destination-top-item {
     display: flex;
@@ -44,5 +44,35 @@
         background: url(../img/destination/india.jpg);
         background-size: cover;
         background-position: center;
+    }
+}
+
+@media (max-width: 1200px) {
+    .destination {
+        margin-top: -250px;
+    }
+    .destination-bottom-item {
+        flex-wrap: wrap;
+        .destination-item_1, .destination-item_2, .destination-item_3, .destination-item_4 {
+            width: 49%;
+            height: 350px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .destination-top-item {
+        flex-wrap: wrap;
+        .destination-item_1, .destination-item_2 {
+           width: 100%;
+           margin-top: 20px;
+        }
+    }
+    .destination-bottom-item {
+        
+        .destination-item_1, .destination-item_2, .destination-item_3, .destination-item_4 {
+            width: 100%;
+        }
     }
 }

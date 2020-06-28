@@ -7,7 +7,7 @@
     width: 100%;
     .slider-wrap {
         position: relative;
-        height: 400px;
+        height: 440px;
         .slider_prev, .slider_next {
             height: inherit;
             position: absolute;
@@ -17,7 +17,6 @@
             text-align: center;
             width: 40px;
             height: 40px;
-            left: -60px;
             top: calc(50% - 35px);
             color: $blue;
             background-color: $blue-lighten;
@@ -29,13 +28,41 @@
             }
             
         }
+        .slider_prev {
+            left: -60px;
+        }
         .slider_next {
-            left: calc(100% + 20px);
+            right: -60px;
         }
         .slider {
             width: 100%;
             height: inherit;
             display: flex;
+            position: relative;
+
+            .slick-dots {
+                position: absolute;
+                display: flex;
+                bottom: -30px;
+                left: calc(50% - 100px);
+                li {
+                    margin: 0 10px;
+                    width: 10px;
+                    height: 10px;
+                    border: none;
+                    border-radius: 50%;
+                    background-color: rgba($blue, 0.3);
+                    &.slick-active {
+                        background-color: transparent;
+                        border: 2px solid $blue;
+                        transform: translateY(-3px);
+                    }
+                    button {
+                        font-size: 0;
+                        
+                    }
+                }
+            }
             .slider-dial-block {
                 width: 400px;
                 height: inherit;
@@ -69,5 +96,26 @@
                 }
             }
         }
+    }
+}
+
+@media (max-width: 1370px) {
+    .top-deals-slider-block {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 992px) {
+    .top-deals-slider-block {
+        width: 100%; 
+        .slider_prev, .slider_next {
+            display: none;
+            visibility: hidden;
+            transform: scale(0);
+        }
+    }
+    .deal-img-block {
+        height: 300px;
     }
 }
