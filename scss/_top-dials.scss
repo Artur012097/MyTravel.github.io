@@ -48,6 +48,7 @@
                 display: flex;
                 bottom: -30px;
                 left: calc(50% - 100px);
+                list-style: none;
                 li {
                     margin: 0 10px;
                     width: 10px;
@@ -61,8 +62,8 @@
                         transform: translateY(-3px);
                     }
                     button {
-                        font-size: 0;
-                        
+                        opacity: 0;
+                        display: none;
                     }
                 }
             }

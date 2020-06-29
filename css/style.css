@@ -1424,6 +1424,7 @@ section {
   display: flex;
   bottom: -30px;
   left: calc(50% - 100px);
+  list-style: none;
 }
 
 .top-deals-slider-block .slider-wrap .slider .slick-dots li {
@@ -1443,7 +1444,8 @@ section {
 }
 
 .top-deals-slider-block .slider-wrap .slider .slick-dots li button {
-  font-size: 0;
+  opacity: 0;
+  display: none;
 }
 
 .top-deals-slider-block .slider-wrap .slider .slider-dial-block {
