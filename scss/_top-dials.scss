@@ -32,10 +32,10 @@
             
         }
         .slider_prev {
-            left: -60px;
+            left: -50px;
         }
         .slider_next {
-            right: -60px;
+            right: -50px;
         }
         .slider {
             width: 100%;
@@ -103,7 +103,7 @@
     }
 }
 
-@media (max-width: 1370px) {
+@media (max-width: 1450px) {
     .top-deals-slider-block {
         width: 90%;
         margin: 0 auto;

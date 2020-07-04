@@ -11,6 +11,9 @@ body {
     margin: 0 auto;
 }
 
+button, input {
+    outline: none;
+}
 @media (max-width: 1370px) {
     .wrap {
         max-width: 1300px;

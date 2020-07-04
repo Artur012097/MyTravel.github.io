@@ -13,7 +13,13 @@
                 justify-content: space-between;
                 &-link {
                     color: $gray-dark;
-                    font-weight: $bold;
+                    font-weight: $medium;
+                    padding: 10px 20px;
+                    &.checked {
+                        background-color: rgba($blue-dark, 0.9);
+                        color: $white;
+                        border-radius: 20px;                                        
+                    }
                 }
             }
         }

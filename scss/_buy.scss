@@ -41,10 +41,12 @@
 
 .buy-currency-btn, .buy-language-btn {
     display: block;
+    width: 260px;
     border: none;
     border: 2px solid rgba($gray-light, 0.1);
     border-radius: 5px;
     background-color: transparent;
+    text-align: left;
     padding: 20px;
     padding-right: 40px;
     margin: 0 10px;
@@ -71,6 +73,11 @@
     box-shadow: 0 5px 9px #297cbb13, 0 5px 9px rgba(119, 131, 143, 0.075);
     visibility: hidden;
     opacity: 0;
+    &.openned {
+        visibility: visible;
+        opacity: 1;
+        transition: 0.1s ease;
+    }
     &:after {
         content: '';
         position: absolute;
@@ -79,7 +86,7 @@
         bottom: -30px;
         right: 15px;
     }
-    .buy-dropdown__link {
+    .buy-dropdown__link__language, .buy-dropdown__link__currency {
         display: flex;
         justify-content: space-between;
         width: 90%;
@@ -88,7 +95,12 @@
         font-weight: $normal;
         padding: 10px 0;
         border-bottom: 1px solid rgba($gray-light, 0.3);
-        &__marker {
+        &.checked {
+            & > .buy-dropdown__link__marker, & > .buy-dropdown__link__span {
+                color: $blue;
+            } 
+         }
+        .buy-dropdown__link__marker {
             font-size: 15px;
         }
         &:hover {
@@ -107,15 +119,6 @@
         min-width: 230px;
         transform: translate(10px, -360px);
         padding: 20px 14px;
-        .buy-dropdown__link {
-            
-            &__marker {
-                
-            }
-            &__language {
-                
-            }
-        }
     }
 }
 
