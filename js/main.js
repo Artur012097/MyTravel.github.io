@@ -14,24 +14,39 @@ for(let i = 0; i < tBlocks.length; i++) {
     tBlocks[i].style.backgroundSize = 'cover';
 }
 
-for(let i = 0; i < trendLinks.length; i++) {
+
+let trendLink = $('.trending-list-link');
+let trendRow = $('.trending-content-row');
+
     
-    // Скрипт блока Трендов 
-    rows[i].classList.add('trending-content-row_opacity-0');
 
-    trendLinks[i].addEventListener('click', function(e) {
-        e.preventDefault();
-        trendLinks[i].classList.add('checked')
-    })
 
-    if(trendLinks[i].classList.contains('checked')) {
-        rows[i].classList.remove('trending-content-row_opacity-0'); 
+trendLink.click(function(e){ 
+    e.preventDefault();
+    trendLink.removeClass("checked");
+    $(this).addClass("checked");
+
+    for (let i = 0; i < trendLink.length; i++) {
+        if (trendLink[i].classList.contains('checked')) {
+            trendRow[i].classList.remove('trending-content-row_opacity-0') 
+        }
+        else {
+            trendRow[i].classList.add('trending-content-row_opacity-0') 
+        }
     }
+  })
+
+  for(let i = 0; i < trendRow.length; i++) {
+    trendRow[i].classList.add('trending-content-row_opacity-0')
+    trendRow[0].classList.remove('trending-content-row_opacity-0')
 }
+
+  
+
 
 // Выбор вальюты в Шапке
 
-let currHd = document.querySelector('.header-currency-link');
+let currHd = document.querySelector('.header-currency');
 let currList = document.querySelector('.header-currency-list');
 
     currHd.addEventListener('mouseover', function() {
@@ -39,9 +54,7 @@ let currList = document.querySelector('.header-currency-list');
     })
 
     currHd.addEventListener('mouseout', function(e) {
-       if (e.target !== currList) {
         currList.classList.remove('active');
-       }
     })
 // Скрипт для Бургер меню
 
@@ -86,38 +99,29 @@ let currList = document.querySelector('.header-currency-list');
 
     // Эффект наведения на ссылок меню шапки
 
-    let headerLinks = document.querySelectorAll('.header-navbar__link');
+    let headerLinks = document.querySelectorAll('.header-navbar>li');
     let headerLinkIcon = document.querySelector('.header-navbar__icon');
-    let headerHiddenBlocks = document.querySelectorAll('.hidden');
-
-    let headerHiddenBlocks_show = 'showed';
-    
+    let headerHiddenBlocks = document.querySelectorAll('.header-navbar__hidden-block');
+    console.log(headerLinks)
+    console.log(headerHiddenBlocks)
     
         for(let i = 0; i < headerLinks.length; i++) {
 
-            headerLinks[i].onmouseover = function() {
-                headerHiddenBlocks[i].classList.add(headerHiddenBlocks_show)
+            headerLinks[i].onmouseenter = function() {
+                headerHiddenBlocks[i].classList.add('showed')  
                 
             }
-            headerLinks[i].onmouseout = function(e) {
-                if (e.target == headerHiddenBlocks[i]) {
-                    headerHiddenBlocks[i].classList.add(headerHiddenBlocks_show)
-                }
-                else if (e.target !== headerHiddenBlocks[i]) {
-                    headerHiddenBlocks[i].classList.remove(headerHiddenBlocks_show)
-                }   
+            headerLinks[i].onmouseleave = function() {
+                headerHiddenBlocks[i].classList.remove('showed')
             }
 
-            headerLinkIcon.onmouseover = function() {
-                headerHiddenBlocks[headerLinks.length - 1].classList.add(headerHiddenBlocks_show)
-            }
-
-            headerLinkIcon.onmouseout = function() {
-            if (headerHiddenBlocks[headerLinks.length - 1].classList.contains(headerHiddenBlocks_show)) {
-                headerHiddenBlocks[headerLinks.length - 1].classList.remove(headerHiddenBlocks_show)
-            }
-        }
-    };
+            headerLinkIcon.addEventListener('mouseenter', function() {
+                headerHiddenBlocks[headerHiddenBlocks.length - 1].classList.add('showed')
+            })
+            headerLinkIcon.addEventListener('mouseleave', function() {
+                headerHiddenBlocks[headerHiddenBlocks.length - 1].classList.remove('showed')
+            })
+        };
 
     // Нижняя кнопка выбора языка   
 
@@ -150,20 +154,19 @@ let currList = document.querySelector('.header-currency-list');
         }
     })
 
-    let langLinks = document.querySelectorAll('.buy-dropdown__link__language');
+    let langLinks = $('.buy-dropdown__link__language');
 
-    for (let i = 0; i < langLinks.length; i++) {
-        langLinks[i].addEventListener('click', function(e) {
-            e.preventDefault();
+    langLinks.click(function(e){ 
+        e.preventDefault();
+        langLinks.removeClass("checked");
+        $(this).addClass("checked");
 
-                (this).classList.remove('checked');
-            if (e.target) {
-                (e.target).classList.add('checked');
-            } 
-               
-            langBtn.innerHTML = langLinks[i].textContent;
-        })
-    }
+        for (let i = 0; i < langLinks.length; i++) {
+            if (langLinks[i].classList.contains("checked")) {
+                langBtn.innerHTML = langLinks[i].textContent;
+            }
+        }
+    })
     
     // Функция, которая открывает всплывающее меню выбора валюты при клике 
 
@@ -187,19 +190,32 @@ let currList = document.querySelector('.header-currency-list');
         })
     })
 
-    let currencyLinks = document.querySelectorAll('.buy-dropdown__link__currency');
+    let currencyLinks = $('.buy-dropdown__link__currency');
 
-    for (let i = 0; i < currencyLinks.length; i++) {
-        currencyLinks[i].addEventListener('click', function(e) {
-            e.preventDefault();
-            if (currencyLinks[i].classList.contains('checked')) {
-                currencyLinks[i].classList.remove('checked');
+    currencyLinks.click(function(e){ 
+        e.preventDefault();
+        currencyLinks.removeClass("checked");
+        $(this).addClass("checked");
+
+        for (let i = 0; i < currencyLinks.length; i++) {
+            if (currencyLinks[i].classList.contains("checked")) {
+                currencyBtn.innerHTML = currencyLinks[i].textContent;
             }
-            else {
-                currencyLinks[i].classList.add('checked');
-            }
-            currencyBtn.innerHTML = currencyLinks[i].textContent;
-        })
-    }
+        }
+    })
+
+    let tourLinks = $('.tour-search-link');
+
+    tourLinks.click(function(e){ 
+        e.preventDefault();
+        tourLinks.removeClass("checked");
+        $(this).addClass("checked");
+    });
+
+    let tourContent = document.querySelectorAll('.tour-search-content');
+        for (let i = 0; i < tourContent.length; i++) {
+            tourContent[i].classList.add('opacity-0');
+            tourContent[0].classList.remove('opacity-0')
+        }
 
 

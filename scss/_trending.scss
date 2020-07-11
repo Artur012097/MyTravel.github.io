@@ -15,10 +15,12 @@
                     color: $gray-dark;
                     font-weight: $medium;
                     padding: 10px 20px;
+                    transition: 0.1s ease;
                     &.checked {
                         background-color: rgba($blue-dark, 0.9);
                         color: $white;
-                        border-radius: 20px;                                        
+                        border-radius: 20px;  
+                        transition: 0.1s ease;                                      
                     }
                 }
             }
@@ -36,8 +38,12 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+            opacity: 1;
+            transition: 0.4s ease-out;
             &_opacity-0 {
                     visibility: hidden;
+                    opacity: 0;
+                    transition: 0.4s ease-out;
                 }
             .trending-content-block {
                 width: 300px;

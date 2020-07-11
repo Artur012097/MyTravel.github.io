@@ -10,7 +10,6 @@
         &-header {
             width: 100%;
             padding-bottom: 40px;
-            padding-left: 20px;
         }
         &-navbar {
             width: 100%;
@@ -21,8 +20,13 @@
                 color: $white;
                 margin-right: 60px;
                 i {
-                    font-size: 30px;
-                    margin-right: 15px;
+                    font-size: 30px;    
+                    padding: 12px;
+                }
+                &.checked i {
+                    
+                    border-radius: 50%;             
+                    background-color: $blue;
                 }
             }
         }
@@ -33,6 +37,12 @@
             background-color: $white;
             border-radius: 5px;
             box-shadow: 0px 14px 50px 0px rgba(32, 32, 32, 0.15);
+            overflow: hidden;
+            &.opacity-0 {
+                visibility: hidden;
+                opacity: 0;
+                transition: 0.4s ease-out;
+            }
             .tour-form-row {
                 width: 100%;
                 height: inherit;
