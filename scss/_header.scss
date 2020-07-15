@@ -65,16 +65,6 @@
                         } 
                     }
                 }
-                .header-sing {
-                    border-right: 1px solid rgba($white, 0.3);
-                    padding: 0 20px;
-                    &__link {
-                        color: rgba($white, 0.9);  
-                        &:hover {
-                            opacity: 0.6; 
-                        }
-                    }
-                }
                 .header-currency {
                     padding: 0 20px;
                     text-transform: uppercase;
@@ -138,6 +128,198 @@
                         &:hover {
                             opacity: 0.6;
                         }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.header-sing {
+    border-right: 1px solid rgba($white, 0.3);
+    padding: 0 20px;
+    &__link {
+        color: rgba($white, 0.9);  
+        position: relative;
+        &:hover {
+            opacity: 0.6; 
+        }
+    }
+    .sing-block {
+        height: 0;
+        position: absolute;
+        right: 9%;
+        top: 150px;
+        opacity: 0;
+        display: flex;
+        flex-direction: column;
+        background-color: $white;
+        border-radius: 3px;
+        z-index: 7;
+        &:after {
+            content: '';
+            position: absolute;
+            border: 12px solid transparent;
+            border-bottom: 15px solid #fff;
+            top: 10px;
+            right: 80px;
+        }
+        &.opened {
+            height: 100vh;
+            top: 81px;
+            opacity: 1;
+            transition: 0.3s ease;
+            &:after {
+                top: -27px;
+                transition-delay: 0.4s;
+            }
+        }
+        &-title {
+            font-size: 20px;
+            color: $gray-dark;
+            font-weight: $medium;
+            text-align: center;
+            display: block;
+            padding: 30px 0;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba($gray-lighten, 0.2);
+        }
+        &-wrap {
+            .sing-form {
+                display: flex;
+                flex-direction: column;
+                padding: 0 50px;
+                .sing-form-mail, .sing-form-pass {
+                    position: relative;
+                }
+                .sing-mail, .sing-pass {
+                    min-width: 300px;
+                    padding: 15px;
+                    padding-right: 0;
+                    border: none;
+                    border: 2px solid rgba($gray-lighten, 0.1);
+                    border-radius: 5px;
+                    margin: 10px 0;
+                    &::placeholder {
+                        font-size: 14px;
+                        color: rgba($gray-light, 0.8);
+                    }
+                }
+                .sing-mail-icon, .sing-pass-icon {
+                    position: absolute;
+                    right: 15px;
+                    top: calc(50% - 11px);
+                    color: rgba($gray-lighten, 0.2);
+                    font-size: 22px;
+                }
+                .sing-login-btn {
+                    display: block;
+                    border: none;
+                    background-color: $blue-light;
+                    color: $white;
+                    font-size: 17px;
+                    font-weight: $medium;
+                    padding: 20px 0;
+                    margin: 10px 0;
+                    border-radius: 3px;
+                    cursor: pointer;
+                    transition: 0.2s ease-out;
+                    &:hover {
+                        transform: translateY(-4px);
+                        box-shadow: 0 4px 11px $blue-darken;
+                    }
+                }
+                &-row {
+                    height: 18px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    .sing-pass-ckb {
+                        position: relative;
+                        visibility: hidden;
+                        margin-right: 10px;
+                        &:before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            width: 15px;
+                            height: 15px;
+                            border: 2px solid rgba($gray-light, 0.3);
+                            border-radius: 5px;
+                            visibility: visible;
+                        }
+                        &:after {
+                            content: '\2714';
+                            position: absolute;
+                            top: 0;
+                            width: 19px;
+                            height: 19px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 17px;
+                            color: $white;
+                            background-color: $blue-light;
+                            border-radius: 5px;
+                            visibility: visible;
+                            opacity: 0;
+                            transition: 0.4s ease;
+                        }
+                        &:checked:after {
+                            opacity: 1;
+                            transition: 0.4s ease;
+                        }
+                    }
+                    .sing-pass-label {
+                        color: $gray-light;
+                    }
+                    .sing-pass-forgot {
+                        text-decoration: underline;
+                        color: $blue-light;
+                        font-size: 15px;
+                    }
+                }
+            }
+            .sing-block-soc {
+                padding: 25px 0;
+                margin: 25px 0;
+                text-align: center;
+                border-top: 1px solid rgba($gray-lighten, 0.2);
+                .sing-block-text {
+                    display: block;
+                    padding: 10px 0;
+                    color: rgba($gray-light, 0.8);
+                    font-size: 15px;
+                }
+                .sing-block__link {
+                    
+                    &_fb, &_tw {
+                        display: inline-block;
+                        min-width: 100px;
+                        padding: 15px 25px;
+                        margin: 10px 15px;
+                        border-radius: 3px;
+                        font-size: 15px;
+                        color: $white;
+                        font-weight: $normal;
+                        transition: 0.2s ease;
+                        i {
+                            margin-right: 5px;
+                        }
+                        &:hover {
+                            transform: translateY(-3px);
+                        }
+                    }
+                    &_fb {
+                        background-color: $blue-facebook;
+                        &:hover {
+                            box-shadow: 0 4px 11px rgba(57, 88, 153, 0.35);
+                        }
+                    }
+                    &_tw {
+                        background-color: $blue-twitter;
+                        box-shadow: 0 4px 11px rgba(3, 169, 224, 0.35);;
                     }
                 }
             }

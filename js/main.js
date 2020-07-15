@@ -41,9 +41,6 @@ trendLink.click(function(e){
     trendRow[0].classList.remove('trending-content-row_opacity-0')
 }
 
-  
-
-
 // Выбор вальюты в Шапке
 
 let currHd = document.querySelector('.header-currency');
@@ -102,8 +99,6 @@ let currList = document.querySelector('.header-currency-list');
     let headerLinks = document.querySelectorAll('.header-navbar>li');
     let headerLinkIcon = document.querySelector('.header-navbar__icon');
     let headerHiddenBlocks = document.querySelectorAll('.header-navbar__hidden-block');
-    console.log(headerLinks)
-    console.log(headerHiddenBlocks)
     
         for(let i = 0; i < headerLinks.length; i++) {
 
@@ -173,7 +168,7 @@ let currList = document.querySelector('.header-currency-list');
     currencyBtn.addEventListener('click', function(e) {
         if (e.target == currencyBtn) {
             if (currencyDrp.classList.contains(blockOp)) {
-                currencyDrp.classList.remove(blockOp)
+                currencyDrp.classList.remove(blockOp)       
             }
             else {
                 currencyDrp.classList.add(blockOp)
@@ -183,11 +178,11 @@ let currList = document.querySelector('.header-currency-list');
         
             // Закрытие меню при клике на другое место
 
-        body.addEventListener('click', function(e) {
+        body.onclick = function(e) {
             if(e.target !== currencyDrp) {
                 currencyDrp.classList.remove(blockOp)
             }
-        })
+        }
     })
 
     let currencyLinks = $('.buy-dropdown__link__currency');
@@ -205,17 +200,50 @@ let currList = document.querySelector('.header-currency-list');
     })
 
     let tourLinks = $('.tour-search-link');
+    let tourRow = document.querySelectorAll('.tour-form-row');
+
+    for (let i = 0; i < tourLinks.length; i++) {
+        tourRow[i].classList.add('opacity-0');
+        tourRow[0].classList.remove('opacity-0')
+    
 
     tourLinks.click(function(e){ 
         e.preventDefault();
-        tourLinks.removeClass("checked");
-        $(this).addClass("checked");
-    });
+        tourLinks.removeClass('checked');
+        $(this).addClass('checked');
 
-    let tourContent = document.querySelectorAll('.tour-search-content');
-        for (let i = 0; i < tourContent.length; i++) {
-            tourContent[i].classList.add('opacity-0');
-            tourContent[0].classList.remove('opacity-0')
+        if (tourLinks[i].classList.contains('checked')) {
+            tourRow[i].classList.remove('opacity-0');
         }
+        else {
+            tourRow[i].classList.add('opacity-0');
+        }
+    });
+}
+        
+let singLnk = document.querySelector('.header-sing__link');
+let singBlk = document.querySelector('.sing-block');
+
+singLnk.onclick =  () => {
+    if (singBlk.classList.contains('opened')) {
+        singBlk.classList.remove('opened')
+    }
+    else {
+        singBlk.classList.add('opened')
+        
+    }
+    body.onclick = function(event){
+       
+        if(event.target == singLnk) {
+            console.log(1)
+            event.stopPropagation();
+        }
+        else {
+            console.log(2)
+        }
+        console.log(event)
+    }
+    
+}
 
 
